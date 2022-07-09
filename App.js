@@ -1,73 +1,29 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, ImageBackground, Image, TouchableOpacity, Modal, Pressable} from 'react-native';
 import React, { useState } from "react";
-import {NavigationContainer} from '@react-navigation/native';
-import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import {createStackNavigator} from '@react-navigation/stack';
+import { NavigationContainer } from '@react-navigation/native';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Icon from 'react-native-vector-icons/Ionicons';
-
 import Home from './src/Screens/Home';
-import Sobre from './src/Screens/Sobre';react-native link react-native-vector-icons
-import Produto from './src/Screens/Produto/Produto';
+import Sobre from './src/Screens/Sobre';
 
 const Tab = createBottomTabNavigator();
-const Stack = createStackNavigator();
 
-const HomeScreen = () => {
-  return (
-    <Stack.Navigator>
-      <Stack.Screen
-        name="Home"
-        component={Home}
-        options={{headerShown: false}}
-      />
-      <Stack.Screen
-        name="Produto"
-        component={Produto}
-        options={{headerTitle: 'Detalhes'}}
-      />
-    </Stack.Navigator>
-  );
-};
 
 const icons = {
   Home: {
-    name: 'ios-home',
+    name: 'ios-home'
   },
   Sobre: {
-    name: 'ios-people',
-  },
+    name: 'ios-people'
+  }
 };
-
-
 
 export default function App() {
   const papeldeparede = {uri: 'https://www.publicdomainpictures.net/pictures/200000/nahled/plain-blue-background.jpg'};
   const [modalVisible, setModalVisible] = useState(false);
   return (
-
-
-    <NavigationContainer>
-      <Tab.Navigator
-        screenOptions={({route}) => ({
-          tabBarIcon: ({color, size}) => {
-            const {name} = icons[route.name];
-            return <Icon name={name} color={color} size={size} />;
-          },
-        })}>
-        <Tab.Screen
-          name="Home"
-          component={HomeScreen}
-          options={{headerShown: false}}
-        />
-        <Tab.Screen
-          name="Sobre"
-          component={Sobre}
-          options={{headerShown: false}}
-        />
-      </Tab.Navigator>
-    </NavigationContainer>
-
+    
     <View style={styles.cabecalhof}>
     <ImageBackground source={papeldeparede} style={{width:500, height:905, opacity:0.9}}>
     <TouchableOpacity>
@@ -198,8 +154,30 @@ export default function App() {
           </View>
         </View>
       </Modal>
+      <NavigationContainer>
+        {/* Insere a navegação Tab dentro container */}
+        <Tab.Navigator 
+          screenOptions={ ({route}) => ({
+            tabBarIcon: ({ color, size }) => {
+              const { name } = icons[route.name];
+              return <Icon name={name} color={color} size={size} />
+            }
+          })  }
+          tabBarOptions={{
+            activeTintColor: 'blue',
+            inactiveTintColor: 'gray',
+          }}
+        >
+          <Tab.Screen name="Home" component={Home} 
+          options={{headerShown: false}}/>
+          <Tab.Screen name="Sobre" component={Sobre}
+          options={{headerShown: false}}
+           />
+        </Tab.Navigator>
+      </NavigationContainer>
     </View>
   );
+}
 const cabecalho = StyleSheet.create({
   cabelhaof: {
     fontSize: 50,
