@@ -20,7 +20,6 @@ const icons = {
     name: 'ios-people'
   }
 };
-const [modalVisible, setModalVisible] = useState(false);
 const App = () => {
   
   return (
