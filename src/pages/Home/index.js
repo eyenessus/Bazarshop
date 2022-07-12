@@ -2,7 +2,8 @@ import { View, Text, TouchableOpacity, Image,ScrollView, ImageBackground, Modal,
 import cabecalho from './stylecabecalho';
 import margens from './stylemargens';
 import textos from './styletextos';
-import React from 'react';
+import React, {useState} from 'react';
+const [modalVisible, setModalVisible] = useState(false);
 const image = { uri: "https://media.istockphoto.com/photos/vintage-retro-grungy-background-design-and-pattern-texture-picture-id656453072?k=20&m=656453072&s=612x612&w=0&h=txuUmEpOZqegdZuQw8ibPeopn3oHW6kmpKZZAChvZjY=" };
 function Home() {
     return (
@@ -112,6 +113,27 @@ function Home() {
       </ImageBackground>
  
     </View>
+    <Modal
+        animationType="slide"
+        transparent={true}
+        visible={modalVisible}
+        onRequestClose={() => {
+          Alert.alert("Modal has been closed.");
+          setModalVisible(!modalVisible);
+        }}
+      >
+        <View style={styles.centeredView}>
+          <View style={styles.modalView}>
+            <Text style={styles.modalText}>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</Text>
+            <Pressable
+              style={[styles.button, styles.buttonClose]}
+              onPress={() => setModalVisible(!modalVisible)}
+            >
+              <Text style={styles.textStyle}>Fecha Modal</Text>
+            </Pressable>
+          </View>
+        </View>
+      </Modal>  
     </ScrollView>
      
     );
