@@ -1,12 +1,14 @@
-import { View, Text, TouchableOpacity, Image} from 'react-native';
+import { View, Text, TouchableOpacity, Image,ScrollView, ImageBackground, Modal, Pressable} from 'react-native';
 import cabecalho from './stylecabecalho';
 import margens from './stylemargens';
 import textos from './styletextos';
 import React from 'react';
-import { AsyncStorage } from 'AsyncStorage';
+const image = { uri: "https://media.istockphoto.com/photos/vintage-retro-grungy-background-design-and-pattern-texture-picture-id656453072?k=20&m=656453072&s=612x612&w=0&h=txuUmEpOZqegdZuQw8ibPeopn3oHW6kmpKZZAChvZjY=" };
 function Home() {
     return (
+      <ScrollView>
 <View>
+  <ImageBackground source={image} resizeMode="cover" style={margens.fundo}>
       <TouchableOpacity>
         <Text style={cabecalho.cabelhaof}>Strizz</Text>
       </TouchableOpacity>
@@ -21,7 +23,7 @@ function Home() {
           uri: 'https://highclass.com.py/wp-content/uploads/2020/10/Imagen-horizontal-Moda.jpg',
         }}
       />
-    <Text>Masculino</Text>
+    <Text style={textos.textao}>Masculino</Text>
     <View style={{flexDirection:'row'}}>
     <TouchableOpacity onPress={() => setModalVisible(true)} >
       <Image
@@ -48,7 +50,7 @@ function Home() {
       />
       </TouchableOpacity>
     </View>
-    <Text> Feminino</Text>
+    <Text style={textos.textao}> Feminino</Text>
     
     <View style={{flexDirection:'row'}}>
       <TouchableOpacity onPress={() => setModalVisible(true)}>
@@ -107,7 +109,11 @@ function Home() {
       </View>
 
       <Text style={textos.textao}>MELHOR LOJA DO BRASIL</Text>
+      </ImageBackground>
+ 
     </View>
+    </ScrollView>
+     
     );
 }
 

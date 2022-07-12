@@ -6,5 +6,9 @@ const margens = StyleSheet.create({
         height:120,
          width:150,
       },
+      fundo:{
+        height:900,
+        width:590,
+      },
 });
 export default margens;
