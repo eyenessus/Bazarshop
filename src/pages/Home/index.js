@@ -1,11 +1,13 @@
 import { View, Text, TouchableOpacity, Image,ScrollView, ImageBackground, Modal, Pressable} from 'react-native';
-import cabecalho from './stylecabecalho';
-import margens from './stylemargens';
-import textos from './styletextos';
+import cabecalho from './stylecabecalho'
+import margens from './stylemargens'
+import textos from './styletextos'
+import styles from '../Home/style'
 import React, {useState} from 'react';
-const [modalVisible, setModalVisible] = useState(false);
+
 const image = { uri: "https://media.istockphoto.com/photos/vintage-retro-grungy-background-design-and-pattern-texture-picture-id656453072?k=20&m=656453072&s=612x612&w=0&h=txuUmEpOZqegdZuQw8ibPeopn3oHW6kmpKZZAChvZjY=" };
 function Home() {
+  const [modalVisible, setModalVisible] = useState(false);
     return (
       <ScrollView>
 <View>
