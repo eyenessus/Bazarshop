@@ -1,20 +1,29 @@
 import React from 'react';
-import { View, Text, ImageBackground} from 'react-native';
+import { View, Text, ImageBackground, Image} from 'react-native';
 import textos from '../Home/styletextos'
 import margens from '../Home/stylemargens'
-const image = { uri: "https://media.istockphoto.com/photos/vintage-retro-grungy-background-design-and-pattern-texture-picture-id656453072?k=20&m=656453072&s=612x612&w=0&h=txuUmEpOZqegdZuQw8ibPeopn3oHW6kmpKZZAChvZjY=" };
+import cabecalho from '../Home/stylecabecalho';
+const image = require ('../images/Papel/fundo.jpg');
+const a2 = require ('./pay.png');
 function Pagamento() {
       return (
         <ImageBackground source={image} style={margens.fundo}>
-          <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+          <View>
             <View>
-            <Text>Pagamento</Text>
-            <Text style={textos.textao}>CREDITO</Text>
-            <Text style={textos.textao}>DEBITO</Text>
+            <Text style={cabecalho.cabelhaop}>pagamentos</Text>
+            <Text style={textos.textopag}>CREDITO</Text>
+            <Text style={textos.textopag}>DEBITO</Text>
+            <Text style={textos.textopag}>PIX</Text>
+            <Text style={textos.textopag}>Mastercard</Text>
+            <Text style={textos.textopag}>Visa</Text>
+            <Text style={textos.textopag}>PIX</Text>
+            <Image
+        style={margens.margemdeprodutos1}
+        source={a2}
+      />
             </View>
              </View>
               </ImageBackground>
       );
   }
-
 export default Pagamento;

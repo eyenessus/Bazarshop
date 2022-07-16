@@ -1,4 +1,4 @@
-package com.loja.newarchitecture;
+package com.strizz.newarchitecture;
 
 import android.app.Application;
 import androidx.annotation.NonNull;
@@ -19,9 +19,9 @@ import com.facebook.react.fabric.CoreComponentsRegistry;
 import com.facebook.react.fabric.FabricJSIModuleProvider;
 import com.facebook.react.fabric.ReactNativeConfig;
 import com.facebook.react.uimanager.ViewManagerRegistry;
-import com.loja.BuildConfig;
-import com.loja.newarchitecture.components.MainComponentsRegistry;
-import com.loja.newarchitecture.modules.MainApplicationTurboModuleManagerDelegate;
+import com.strizz.BuildConfig;
+import com.strizz.newarchitecture.components.MainComponentsRegistry;
+import com.strizz.newarchitecture.modules.MainApplicationTurboModuleManagerDelegate;
 import java.util.ArrayList;
 import java.util.List;
 

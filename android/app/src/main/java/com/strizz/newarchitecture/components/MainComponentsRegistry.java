@@ -1,4 +1,4 @@
-package com.loja.newarchitecture.components;
+package com.strizz.newarchitecture.components;
 
 import com.facebook.jni.HybridData;
 import com.facebook.proguard.annotations.DoNotStrip;

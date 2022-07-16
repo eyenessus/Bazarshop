@@ -12,5 +12,12 @@ const cabecalho = StyleSheet.create({
         textAlign:'right',
         
       },
+      cabelhaop: {
+        fontSize: 50,
+        textTransform:'uppercase',
+        marginTop:50,
+        color:'white',
+        textAlign: 'center',
+      }
 });
 export default cabecalho;

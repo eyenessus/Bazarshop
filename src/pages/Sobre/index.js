@@ -1,12 +1,17 @@
 import React from 'react';
-import { View, Text, } from 'react-native';
-
+import { View, Text, ImageBackground} from 'react-native';
+const fundo = require ('../images/Papel/fundo.jpg');
+import textos from '../Home/styletextos'
+import margens from '../Home/stylemargens'
+import cabecalho from '../Home/stylecabecalho';
 function Sobre() {
       return (
-          <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-              <Text>What is Lorem Ipsum?
-Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</Text>
+        <ImageBackground source={fundo} resizeMode="cover" style={margens.fundo}>
+          <View>
+              <Text style={cabecalho.cabelhaof} >Strizz</Text>
+                <Text style={textos.textao}>Strizz é uma rede de lojas de departamento brasileira pertencente ao Grupo Guararapes Confecções. É a terceira maior rede de lojas de departamento no Brasil </Text>
           </View>
+          </ImageBackground>
       );
   }
 
